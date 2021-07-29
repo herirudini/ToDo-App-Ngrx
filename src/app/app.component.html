@@ -4,7 +4,7 @@
       <mat-card>
         <mat-card-header>
           <mat-card-title>
-            <h2>To Do List</h2>
+            <h2>{{title | uppercase}}</h2>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
@@ -28,7 +28,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-todo-form (toDoChange)="onAddToDoChange($event)"></app-todo-form>
+          <app-todo-form id="inputToDo" (toDoChange)="onAddToDoChange($event)"></app-todo-form>
           <div fxLayout="row" fxLayoutAlign="end">
             <button mat-button color="primary" (click)="addToDo()">Add To Do</button>
           </div>

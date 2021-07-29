@@ -14,7 +14,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  title: string = 'todo-app';
   completeToDos: Observable<Array<ToDo>>;
 
   incompleteToDos: Observable<Array<ToDo>>;
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   addToDo() {
-    console.log(this._toDo)
+    // console.log(this._toDo)
     this.store.dispatch(new AddToDo({
       id: Math.random(),
       complete: false,
@@ -45,8 +45,9 @@ export class AppComponent implements OnInit {
   }
 
   onAddToDoChange(event: object) {
-    console.log(event)
+    // console.log(event)
     this._toDo = event 
+    // document.getElementById('inputToDo').val('')
   }
 
   onCompleteToDo(toDo: ToDo) {

@@ -32,4 +32,26 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('todo-app app is running!');
   });
+
+  it(`should render completeDos`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.completeToDos).toEqual({
+      id: 2,
+      task: 'Use NgRx in my to-do app',
+      complete: true
+    });
+  });
+
+  it(`should render incompleteDos`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.incompleteToDos).toEqual({
+      id: 1,
+      task: 'Watch Ozark Season 2',
+      complete: false
+    });
+  });
+  
 });
+

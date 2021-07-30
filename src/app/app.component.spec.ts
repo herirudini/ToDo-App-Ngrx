@@ -68,7 +68,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     console.log(app.completeToDos)
-    expect(app.completeToDos).toContain('Use NgRx in my to-do app');
+    expect(app.completeToDos).toContain({ task: 'Use NgRx in my to-do app' });
     // const compiled = fixture.nativeElement;
     // expect(compiled.querySelector('completed-list').getText)
     //   .toContain('Use NgRx in my to-do app');
@@ -78,7 +78,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('incomplete-list').getText)
+    expect(compiled.querySelector('incomplete-list'))
       .toContain('Watch Ozark Season 2');
   });
 
